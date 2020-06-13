@@ -8,8 +8,8 @@ const db = require('./connection');
 // * created
 
 const schema = Joi.object().keys({
-  username: Joi.string().alphanum().required(),
-  subject: Joi.string().required(),
+  username: Joi.string().max(25).required(),
+  subject: Joi.string().max(50).required(),
   message: Joi.string().max(500).required(),
   imageURL: Joi.string().uri({
     scheme: [
