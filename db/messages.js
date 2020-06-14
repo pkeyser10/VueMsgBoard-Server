@@ -25,7 +25,7 @@ function getAll() {
 }
 
 function create(message) {
-  const gifs = ["https://media.giphy.com/media/BWQVFNGC8CXafwwvk8/giphy.gif", "https://media.giphy.com/media/SRRQQmNtKf8IM/giphy.gif", "https://media.giphy.com/media/go3X4svFhKdzi/giphy.gif"];
+  const gifs = ["https://media.giphy.com/media/BWQVFNGC8CXafwwvk8/giphy.gif", "https://media.giphy.com/media/WDn21GO1KmpNK/giphy.gif", "https://media.giphy.com/media/12UlfHpF05ielO/giphy.gif", "https://media.giphy.com/media/ujTeFADJLiqmcy1mXp/giphy.gif", "https://media.giphy.com/media/fUw7oSLn57ioIqypGE/giphy.gif", "https://media.giphy.com/media/YfACqrGia4YV2/giphy.gif", "https://media.giphy.com/media/POlPO0U0KuwDu/giphy.gif", "https://media.giphy.com/media/go3X4svFhKdzi/giphy.gif", "https://media.giphy.com/media/YPyUkgR0s552oOooGk/giphy.gif"];
   const randomGif = gifs[Math.floor(Math.random() * gifs.length)];
   
   if (!message.username) message.username = 'Anonymous';
