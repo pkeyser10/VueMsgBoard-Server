@@ -8,7 +8,7 @@ const db = require('./connection');
 // * created
 
 const schema = Joi.object().keys({
-  username: Joi.string().max(25).required(),
+  username: Joi.string().max(25),
   subject: Joi.string().max(50).required(),
   message: Joi.string().max(500).required(),
   imageURL: Joi.string().uri({
@@ -26,6 +26,7 @@ function getAll() {
 
 function create(message) {
   if (!message.username) message.username = 'Anonymous';
+  if(!message.imageURL) message.imageURL = 'https://media.giphy.com/media/BWQVFNGC8CXafwwvk8/giphy.gif';
 
   const result = Joi.validate(message, schema);
   if (result.error == null) {
