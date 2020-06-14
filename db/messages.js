@@ -25,8 +25,11 @@ function getAll() {
 }
 
 function create(message) {
+  const gifs = ["https://media.giphy.com/media/BWQVFNGC8CXafwwvk8/giphy.gif", "https://media.giphy.com/media/SRRQQmNtKf8IM/giphy.gif", "https://media.giphy.com/media/go3X4svFhKdzi/giphy.gif"];
+  const randomGif = gifs[Math.floor(Math.random() * gifs.length)];
+  
   if (!message.username) message.username = 'Anonymous';
-  if(!message.imageURL) message.imageURL = 'https://media.giphy.com/media/BWQVFNGC8CXafwwvk8/giphy.gif';
+  if(!message.imageURL) message.imageURL = randomGif;
 
   const result = Joi.validate(message, schema);
   if (result.error == null) {
